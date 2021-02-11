@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 07-Fev-2021 às 23:46
+-- Tempo de geração: 10-Fev-2021 às 21:50
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 7.4.9
 
@@ -38,7 +38,15 @@ CREATE TABLE IF NOT EXISTS `book` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `book_id_user_foreign` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `book`
+--
+
+INSERT INTO `book` (`id`, `id_user`, `Titulo`, `Paginas`, `Preço`, `created_at`, `updated_at`) VALUES
+(5, 1, 'O vento levou', 30, 8.99, '2021-02-11 00:48:40', '2021-02-11 00:48:40'),
+(6, 2, 'O vento levou 2', 21, 63.99, '2021-02-11 00:48:51', '2021-02-11 00:48:51');
 
 -- --------------------------------------------------------
 
@@ -115,7 +123,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`Email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`id`, `Nome`, `Email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Teste', 'teste@tes.com', '2021-02-03 21:45:00', '1234556', '15428', '2021-02-01 21:45:00', '2021-02-02 21:45:00'),
+(2, 'Exemplo', 'exemplo@exemplo.com', '2021-02-01 21:46:28', '1254489', '895647', '2021-02-02 21:46:28', '2021-02-03 21:46:28');
 
 --
 -- Restrições para despejos de tabelas
